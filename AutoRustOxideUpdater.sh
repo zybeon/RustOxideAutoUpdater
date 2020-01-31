@@ -4,19 +4,16 @@
 #########
 echo "Starting . . ."
 echo "Downloading Latest Oxide version info"
-latestOxide = "~/latestOxide.txt" 
-installedOxide = "~/installedOxide.txt"
-curl https://umod.org/games/rust/latest.json | jq .version > latestOxide
-
-if -f installedOxide
+curl https://umod.org/games/rust/latest.json | jq .version > latestOxide.txt
+if [ -f installedOxide.txt ]
 then
-  echo "installed.json already exists, checking for update"
+  echo "installed.txt already exists, checking for update"
 else
-  touch installedOxide
-  echo "installed does not exist, created empty installed"
+  touch installedOxide.txt
+  echo "installed does not exist, created empty installed.txt"
 fi
 
-if cmp -s installedOxide latestOxide
+if cmp -s installedOxide.txt latestOxide.txt
 then 
  echo "No update required"
 else
@@ -34,7 +31,7 @@ bash ~/rustserver u
 bash ~/rustserver ma
 bash ~/rustserver st
 echo "Rust, Oxide and installed.json has been updated"
-cat latestOxide > installedOxide
+cp latestOxide.txt installedOxide.txt
 fi
 
 exit
