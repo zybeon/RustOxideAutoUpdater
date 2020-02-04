@@ -12,9 +12,9 @@ serverport=28016
 rconpass=ChangeME
 
 ### Variables
-rustsend=/opt/RustOxideUpdater/rustrconsend.js
-installed=/opt/RustOxideUpdater/installedOxide.txt
-latest=/opt/RustOxideUpdater/latestOxide.txt
+rustsend=/opt/RustOxideAutoUpdater/rustrconsend.js
+installed=/opt/RustOxideAutoUpdater/installedOxide.txt
+latest=/opt/RustOxideAutoUpdater/latestOxide.txt
 rustserver=~/rustserver ##Location of your lgsm rustserver script
 
 #########
