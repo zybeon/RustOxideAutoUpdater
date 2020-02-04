@@ -65,12 +65,12 @@ sleep 30s
 # Later incorporate checking for first Thursday of the month to notify players server is wiping. include wiping all on that day 'rustserver wa'
 
 echo "######## Shuting down server ########"
-bash ~/rustserver sp
+bash $rustserver sp
 echo "######## Updating server ############"
-bash ~/rustserver u
-bash ~/rustserver mu
+bash $rustserver u
+bash $rustserver mu
 echo "######## Starting Server ############"
-bash ~/rustserver st
+bash $rustserver st
 echo "######## Rust, Oxide and installedOxide.txt has been updated"
 cp $latest $installed
 fi
