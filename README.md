@@ -1,5 +1,6 @@
 # RustOxideAutoUpdater
 > When using lgsm for running a Rust server this will trigger on an oxide update to shut down the server, update oxide and rust, then reboot.
+> If there is no update it runs the lgsm monitor command
 > This monitors the latest Oxide version and on a new version release
 
 ## Install
@@ -13,7 +14,7 @@ $npm i webrconjs
 ```
 
 ## Usage
-Best if used in a cron job every 5-10 minutes. This replaces the need to call the monitor command in lgsm if used this way. If set less than 5 min it may not complete an update before the next call to the script happens (untested fallout). If needed a check could be made to see if an update is pending and exit the script
+When running a Rust server with Oxide mods you normally need to wait until until Oxide releases their update. This is best when used in a cron job running every 1-10 minutes and is meant to replace the need to run the monitor command as this will run the monitor command if no update is found. PID file checking is used to ensure the script does not execute if a previous process is running. (Not tested thoroughly)
 
 Example cron
 ```
@@ -22,8 +23,8 @@ Example cron
 ## Example call to webrconjs
 node rustrconsend.js COMMAND IP PORT RCONPASS
 
-### Example commands
-- say Test  - Posts message to all users
+### Example rcon commands
+- say Test  - Posts message to all users (node rustrconsend.js "say Visit our Discord server for perks! discord.gg/xxxxxx" IP PORT RCONPASS)
 - restart   - Restarts in 300 seconds with 30 second notices
 - quit      - Graceful shutdown of server
 - heli.call - Calls patrol helicopter
