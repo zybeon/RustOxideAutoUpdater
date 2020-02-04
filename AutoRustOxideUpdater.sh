@@ -15,6 +15,7 @@ rconpass=ChangeME
 rustsend=/opt/RustOxideUpdater/rustrconsend.js
 installed=/opt/RustOxideUpdater/installedOxide.txt
 latest=/opt/RustOxideUpdater/latestOxide.txt
+rustserver=~/rustserver ##Location of your lgsm rustserver script
 
 #########
 # START #
@@ -34,6 +35,7 @@ fi
 if cmp -s $installed $latest
 then
  echo "No update required"
+ bash $rustserver m
 else
  echo "New update is available!"
 #######################
