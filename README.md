@@ -4,7 +4,7 @@
 > This monitors the latest Oxide version and on a new version release
 
 ## Install
-Default install location is /opt/RustOxideUpdater/
+Default install location is /opt/RustOxideAutoUpdater/
 
 ```shell
 $mkdir /opt/RustOxideAutoUpdater
