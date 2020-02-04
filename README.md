@@ -13,7 +13,8 @@ $npm i webrconjs
 ```
 
 ## Usage
-Best if used in a cron job every 1-10 minutes. This replaces the need call the monitor command in lgsm if used this way.
+Best if used in a cron job every 5-10 minutes. This replaces the need to call the monitor command in lgsm if used this way. If set less than 5 min it may not complete an update before the next call to the script happens (untested fallout). If needed a check could be made to see if an update is pending and exit the script
+
 Example cron
 ```
 */5 * * * * bash /opt/RustOxideAutoUpdater/updatecheck.sh
