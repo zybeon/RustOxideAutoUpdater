@@ -16,11 +16,9 @@ var rcon = new WebRcon(server, port)
 
 // Handle events:
 rcon.on('connect', function() {
-    // commenting this out to keep quiet
-    console.log('CONNECTED')
+    //console.log('CONNECTED')
     //console.dir(argv)
-
-    console.log('Sending this: ', command)
+    console.log('Sending command: ', command)
     // Run a command once connected:
     rcon.run(command, 0)
     // and disconnect immediately
@@ -28,14 +26,12 @@ rcon.on('connect', function() {
     process.exit()
 })
 rcon.on('disconnect', function() {
-    // commenting this out to keep quiet
     //console.log('DISCONNECTED')
 })
 rcon.on('message', function(msg) {
     console.log('MESSAGE:', msg)
 })
 rcon.on('error', function(err) {
-    // commenting this out to keep quiet
     console.log('ERROR:', err)
     process.exit()
 })
