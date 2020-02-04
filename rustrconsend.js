@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
-var WebRcon = require('/usr/local/lib/node_modules/webrconjs')
-
-var argv = require('/usr/local/lib/node_modules/webrconjs/node_modules/yargs')
+var WebRcon = require('/opt/RustOxideUpdater/node_modules/webrconjs')
+var argv = require('/opt/RustOxideUpdater/node_modules/yargs')
 
 .argv
 
@@ -18,7 +17,7 @@ var rcon = new WebRcon(server, port)
 // Handle events:
 rcon.on('connect', function() {
     // commenting this out to keep quiet
-    // console.log('CONNECTED')
+    console.log('CONNECTED')
     //console.dir(argv)
 
     console.log('Sending this: ', command)
@@ -26,17 +25,19 @@ rcon.on('connect', function() {
     rcon.run(command, 0)
     // and disconnect immediately
     rcon.disconnect()
+    process.exit()
 })
 rcon.on('disconnect', function() {
     // commenting this out to keep quiet
-    // console.log('DISCONNECTED')
+    //console.log('DISCONNECTED')
 })
 rcon.on('message', function(msg) {
     console.log('MESSAGE:', msg)
 })
 rcon.on('error', function(err) {
     // commenting this out to keep quiet
-    // console.log('ERROR:', err)
+    console.log('ERROR:', err)
+    process.exit()
 })
 
 // Connect by providing the server's rcon.password:
