@@ -1,7 +1,6 @@
 # RustOxideAutoUpdater
 > When using lgsm for running a Rust server this will trigger on an oxide update to shut down the server, update oxide and rust, then reboot.
 > If there is no update it runs the lgsm monitor command
-> This monitors the latest Oxide version and on a new version release
 
 ## Install
 Default install location is /opt/RustOxideAutoUpdater/
